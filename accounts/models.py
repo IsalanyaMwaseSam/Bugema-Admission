@@ -10,9 +10,6 @@ class CustomUserManager(BaseUserManager):
         user = self.model(
             username=username
         )
-        user.is_superuser = False
-        user.is_staff = False
-        user.is_admin = False
         user.set_password(password)
         user.save(using=self._db)
         return user
