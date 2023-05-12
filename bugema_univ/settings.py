@@ -47,11 +47,7 @@ INSTALLED_APPS = [
     'intl_tel_input',
     'accounts',
     'Administration',
-    'django.contrib.humanize',
-    'bootstrap4',
-  
-  
-    
+    'django.contrib.humanize',  
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
