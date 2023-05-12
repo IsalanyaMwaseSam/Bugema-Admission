@@ -1,4 +1,4 @@
-/* TABLETS */
+
 
 @media (max-width: 1024px) {
     [dir="rtl"] .colMS {
@@ -60,7 +60,7 @@
     }
 }
 
-/* MOBILE */
+
 
 @media (max-width: 767px) {
     [dir="rtl"] .aligned .related-lookup,
