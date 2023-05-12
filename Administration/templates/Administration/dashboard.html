@@ -1,0 +1,89 @@
+{% load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Bugema University</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/static/css/dashboard.css">
+  </head>
+  <body>
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+	  		<h1><a href="index.html" class="logo">Bugema University</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="{% url 'dashboard' %}"><span class="fa fa-home mr-3"></span> Dashboard</a>
+          </li>
+          <li>
+            <a href="{% url 'pending-applications' %}" style="font-size: 14px; margin-left: 3px;"><span><img src="/static/images/file (1).png" style="margin-left: -15px;"></span> Pending Applications <h5 style="color: #fff; margin-left: 190px; margin-top: -25px;">{{pending_count}}</h5></a>
+          </li>
+          <li>
+            <a href="{% url 'approved-applications' %}" style="font-size: 14px; margin-left: 3px;"><span><img src="/static/images/file (2).png"  style="margin-left: -15px;"></span> Approved Applications  <h5  style="color: #fff; margin-left: 190px; margin-top: -25px;">{{approved_count}}</h5></a>
+          </li>
+          <li>
+            <a href="{% url 'rejected-applications' %}" style="font-size: 14px; margin-left: 3px;"><span><img src="/static/images/reject (1).png"  style="margin-left: -15px;"></span> Rejected Applications  <h5  style="color: #fff; margin-left: 190px; margin-top: -25px;">{{rejected_count}}</h5></a>
+          </li>
+          <!-- <li>
+            <a href="#"><span class="fa fa-paper-plane mr-3"></span> Settings</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-paper-plane mr-3"></span> Information</a>
+          </li> -->
+        </ul>
+        
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 style="text-align: center; margin-top: 20px;">DASHBOARD</h2>
+        <div class="container-fluid py-4">
+          <div class="row" style="margin-top: 20px;">
+            <div class="col-md-4">
+              <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Total Applications</div>
+                <div class="card-body">
+                  <h3 class="card-title" style="text-align: center; color: white;"><strong>{{total_count}}</strong></h3>
+                  <a   style="color: white; margin-left: 100px; font-size: 18px;">Total</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                <div class="card-header">Pending Applications</div>
+                <div class="card-body">
+                  <h3 class="card-title" style="text-align: center; color: white;"><strong>{{pending_count}}</strong></h3>
+                  <a  href="{% url 'pending-applications' %}" style="color: white; margin-left: 100px; font-size: 18px;">View</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                <div class="card-header">Approved Applications</div>
+                <div class="card-body">
+                  <h3 class="card-title" style="text-align: center; color: white;"><strong>{{approved_count}}</strong></h3>
+                  <a href="{% url 'approved-applications' %}" style="color: white; margin-left: 100px; font-size: 18px;">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
+		</div>
+   
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>

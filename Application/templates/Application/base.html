@@ -1,0 +1,173 @@
+{% load static %}
+{% load crispy_forms_tags %}  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Bugema University Application</title>
+    <!-- Custom Stylesheet -->
+
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<style>
+    nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: white;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+  
+.logo {
+    height: 5px;
+}
+  
+.navbar-text {
+    text-align: center;
+    flex-grow: 1;
+    margin: 0px 500px;
+}
+</style>
+<!-- .card-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 767px) {
+    nav{
+        width: 100%;
+        padding: 10px;
+
+    }
+    .navbar-toggle {
+        display: block;
+        cursor: pointer;
+    }
+    .navbar-text {
+        display: none;
+        margin: 0px 150px;
+    }
+    nav.active .navbar-text {
+        display: block;
+    }
+    .logo{
+        margin-top: -7px;
+    }
+</style>
+    .card{
+        width: 100%;
+        max-width: 650px;
+        margin-left: 10px;
+       
+    }
+}
+
+@media screen and (max-width: 670px) {
+    nav{
+        width: 100%;
+        padding: 10px;
+    }
+    .logo {
+        height: 30px;
+    }
+    .navbar-text h4 {
+        font-size: 18px;
+    }
+    .navbar-text {
+        display: none;
+        margin: -100px 100px;
+    }
+    .card{
+        max-width: 350px;
+    }
+    
+    .card-body {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+    }
+    
+}
+@media screen and (max-width: 480px) {
+    .navbar-text h4 {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .navbar-text h4 {
+        font-size: 20px;
+    }
+}
+
+</style> --> 
+<body style="background: #E4E9F7;">
+    <nav>
+        <div class="logo">
+          <img src="/static/images/bu.png" alt="Logo" style="width: 50px; height: 50px; margin-top: -20px;">
+        </div>
+        <div class="navbar-text">
+          <h6 style="color: skyblue;">Bugema University Application</h6>
+        </div>
+    </nav>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">
+            ×
+            </button>
+            <strong>{{message}}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% block content %}
+    <div class="container-fluid mt-3" style="display: flex; justify-content: center; align-items: center; ">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card" style="width: 60rem; height: 29rem; background-clip: border-box; border: 1px solid rgba(34,41,47,.125); border-radius: 0.5rem; margin-top: 50px;">
+                    <div class="card-body">
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            <div class="input-box">
+                                {{form.name|as_crispy_field}}
+                            </div>
+                            <br>
+                            <div class="input-box">
+                                {{ form.email|as_crispy_field  }}
+                            </div>
+                            <br>
+                            <div class="input-box">
+                                {{ form.phone_number|as_crispy_field  }}
+                            </div>
+                            <br>
+                            <input type='submit' class="btn btn-primary" value="Submit" style="width: 20%;">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!--Qualifications-->
+    <script src="/static/js/qualifications.js"></script>
+</body>

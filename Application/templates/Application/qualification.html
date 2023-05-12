@@ -1,0 +1,68 @@
+{% extends 'Application/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %} 
+{% load humanize %}
+{% block content %}
+<div class="container-fluid mt-3" style="display: flex; justify-content: center; align-items: center;">
+  <div class="row">
+    <div class="col-lg-3 col-sm-6">
+      <div class="text" style="text-align: center; color: skyblue; margin-left: 360px;">
+        <h3>QUALIFICATIONS</h3>
+      </div>
+      <div class="card" style="width: 60rem; height: 29rem; background-clip: border-box; border: 1px solid rgba(34,41,47,.125); border-radius: 0.5rem;">
+        <div class="card-body" style="position: absolute;">
+          <div class="container">
+            <form method="get">
+              <select name="qualification_id" class="form-select">
+                <option value="">Select a qualification</option>
+                {% for qualification in qualifications %}
+                  <option value="{{ qualification.id }}">{{ qualification.name }}</option>
+                {% endfor %}
+              </select>
+              <input type="submit" value="Select">
+            </form>
+            <div class="card mt-3" style="height: 23rem; width: 55rem; overflow-y: scroll;">
+              <div class="card-body">
+                {% if programs|length > 0 %}
+                  <ul>
+                    {% for school in schools %}
+                      {% for department in school.departments %}
+                        {% if department.programs %}
+                          <li style="list-style: none; color: skyblue; font-size: 20px;">{{ school.name }}</li>
+                          <li style="list-style: none; color: darkblue; font-size: 15px; margin-bottom: 10px;">{{ department.name }}</li>
+                          {% for program in department.programs %}
+                            {% if program.qualification_id == selected_qualification_id %}
+                              <div class="card mb-3">
+                                <div class="card-body">
+                                  <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title" style="color: black; font-size: 14px;">{{ program.name }}</h5>
+                        
+                                    <a href="{% url 'application' contact_id=contact.id program_id=program.id|stringformat:'d' %}" class="btn btn-primary">Apply</a>
+                                    {{ application_url }}
+                                  </div>
+                                  <p class="card-text" style="color: blue;">
+                                    Application Fee: <span style="color: green; display: inline-block;">50000 UGX</span>
+                                  </p>
+                                </div>
+                              </div>
+                            {% endif %}
+                          {% endfor %}
+                        {% endif %}
+                      {% endfor %}
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  <p>No programs available for the selected qualification.</p>
+                {% endif %}
+  
+              </div>
+            </div>
+          </div>
+        </div>      
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

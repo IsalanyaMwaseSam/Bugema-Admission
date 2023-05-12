@@ -1,0 +1,486 @@
+{
+    "qualifications": [
+        {
+            "id": 1,
+            "name": "s.4"
+        },
+        {
+            "id": 2,
+            "name": "S.6"
+        },
+        {
+            "id": 3,
+            "name": "Certificate"
+        },
+        {
+            "id": 4,
+            "name": "Diploma"
+        },
+        {
+            "id": 5,
+            "name": "Bachelor's Degree"
+        },
+        {
+            "id": 6,
+            "name": "Master's Degree"
+        },
+        {
+            "id": 7,
+            "name": "PhD"
+        }
+    ],
+    "schools": [
+        {
+            "id": 1,
+            "name": "SCHOOL OF EDUCATION, HUMANITIES & SOCIAL SCIENCES (SEHSS)",
+            "departments": [
+                {
+                    "id": 1,
+                    "name": "Department of Social Sciences",
+                    "programs": [
+                        {
+                            "id": 1,
+                            "name": "Certificate in Counselling (UBTEB Curriculum)",
+                            "qualification_id": 1
+                        },
+                        {
+                            "id": 2,
+                            "name": "Diploma in Counselling ",
+                            "qualification_id": 2
+                        },
+                        {
+                            "id": 3,
+                            "name": "Diploma in Public Administration and Management ",
+                            "qualification_id": 2
+                        },
+                        {
+                            "id": 4,
+                            "name": "Diploma in Social Work and Social Administration",
+                            "qualification_id": 2
+                        },
+                        {
+                            "id": 5,
+                            "name": "Diploma in Development Studies",
+                            "qualification_id": 2
+                        },
+                        {
+                            "id": 6,
+                            "name": "Diploma in Social Work and Social Administration",
+                            "qualification_id": 2
+                        },
+                        {
+                            "id": 7,
+                            "name": "Diploma in Journalism and Mass Communication ",
+                            "qualification_id": 2
+                        },
+                        {
+                            "id": 8,
+                            "name": "Bachelor of Science in Psychology and Counselling",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 9,
+                            "name": "Bachelor of Social Work and Social Administration",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 10,
+                            "name": "Bachelor of Public Administration and Management",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 11,
+                            "name": "Bachelor of Journalism and Mass Communication",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 12,
+                            "name": "Bachelor of Arts in Peace and Conflict Management",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 13,
+                            "name": "Bachelor of Arts in Community Development",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 14,
+                            "name": "Bachelor of Arts in Development Studies",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 15,
+                            "name": "Bachelor of Humanitarian Emergency and Disaster Management",
+                            "qualification_id": 4
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Department of Education & Humanities",
+                    "programs": [
+                        {
+                            "id": 16,
+                            "name": "Diploma in Early Childhood Development (ECD) ",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 17,
+                            "name": "Diploma in Education – Primary",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "name": "Intensive English (One year proficiency certificate)",
+                            "qualification_id": 1
+                        },
+                        {
+                            "id": 19,
+                            "name": "Bachelor in Early Childhood Development (ECD)",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 20,
+                            "name": "Bachelor of Arts or Science with Education – Primary (with subject combinations)",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 21,
+                            "name": "Bachelor of Arts or Science with Education-Secondary (with subject combinations)",
+                            "qualification_id": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "SCHOOL OF THEOLOGY AND RELIGIOUS STUDIES (SOTR)",
+            "departments": [
+                {
+                    "id": 3,
+                    "name": "Department of Theology",
+                    "programs": [
+                        {
+                            "id": 22,
+                            "name": "Certificate in Theology ",
+                            "qualification_id": 1
+                        },
+                        {
+                            "id": 23,
+                            "name": "Diploma in Theology ",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 24,
+                            "name": "Bachelor of Theology ",
+                            "qualification_id": 4
+                        }
+                        
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name": "Department pf Religious Studies",
+                    "programs": [
+                        {
+                            "id": 25,
+                            "name": "Bachelor of Arts in Religious Studies (with options)",
+                            "qualification_id": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "SCHOOL OF BUSINESS (SOB)",
+            "departments": [
+                {
+                    "id": 5,
+                    "name": "Department of   Accounting & Finance",
+                    "programs": [
+                        {
+                            "id": 26,
+                            "name": "Diploma in Accounting",
+                            "qualification_id": 1
+                        },
+                        {
+                            "id": 27,
+                            "name": "Bachelor of Business Administration in Insurance",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 28,
+                            "name": "Bachelor of Science in Accounting ",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 29,
+                            "name": "Bachelor of Science in Finance and Banking ",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 30,
+                            "name": "Bachelor of Business Administration (Accounting) ",
+                            "qualification_id": 4
+                        }
+                        
+                    ]
+                },
+                {
+                    "id": 6,
+                    "name": "Department of Management ",
+                    "programs": [
+                        {
+                            "id": 31,
+                            "name": "Diploma in Procurement and Supply Chain Management",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 32,
+                            "name": "Diploma in Human Resource Management",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 33,
+                            "name": "Diploma in Office Administration ",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 34,
+                            "name": "Diploma in Management",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 35,
+                            "name": "Bachelor of Human Resource Management ",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 36,
+                            "name": "BBA in Project Planning & Grant Management",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 37,
+                            "name": "Bachelor of Procurement & Supply Chain Management ",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 38,
+                            "name": "Bachelor of Entrepreneurship",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 39,
+                            "name": "Bachelor of Arts in Economics",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 40,
+                            "name": "Bachelor of Business Administration in Management",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 41,
+                            "name": "Bachelor of Business Administration in Marketing",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 42,
+                            "name": "Bachelor of Secretarial Science and Office Administration ",
+                            "qualification_id": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "SCHOOL OF SCIENCE & TECHNOLOGY (SOST)",
+            "departments": [
+                {
+                    "id": 7,
+                    "name": "Department of Computer & Technology",
+                    "programs": [
+                        {
+                            "id": 43,
+                            "name": "Bachelor of Business Computing",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 44,
+                            "name": "Bachelor of Information Technology",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 45,
+                            "name": "Bachelor of Library and Information Science ",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 46,
+                            "name": "Bachelor of Science in Software Engineering",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 47,
+                            "name": "Bachelor of Science in Network Systems Administration",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 48,
+                            "name": "Bachelor of Science in Computer Engineering ",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 49,
+                            "name": "Diploma in Information Technology",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 50,
+                            "name": "Diploma in Computer Forensics",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 51,
+                            "name": "Certificate in Information Technology (UBTEB Curriculum)",
+                            "qualification_id": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "name": "Department of Life & Physical Science",
+                    "programs": [
+                        {
+                            "id": 52,
+                            "name": "Bachelor of Science in Biochemistry ",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 53,
+                            "name": "Bachelor of Science in Statistics",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 54,
+                            "name": "Diploma in Science Laboratory Technology ",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 55,
+                            "name": "Diploma in Biomedical Engineering and Technology",
+                            "qualification_id": 3
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "SCHOOL OF AGRICULTURE & APPLIED SCIENCES (SAAS)",
+            "departments": [
+                {
+                    "id": 9,
+                    "name": "Department of Agriculture Sciences",
+                    "programs": [
+                        {
+                            "id": 56,
+                            "name": "Bachelor of Science in Agriculture (with options)",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 57,
+                            "name": "Bachelor of Science in Agribusiness Innovation and Management",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 58,
+                            "name": "Diploma in Crop Science & Management",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 59,
+                            "name": "Diploma in Animal Production & Management",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 60,
+                            "name": "Certificate in Agriculture (UBTEB Curriculum) ",
+                            "qualification_id": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "name": "Department of Environmental & Applied Sciences",
+                    "programs": [
+                        {
+                            "id": 61,
+                            "name": "Bachelor of Science in Environmental Science ",
+                            "qualification_id": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "SCHOOL OF HEALTH AND ALLIED SCIENCES (SHAS)",
+            "departments": [
+                {
+                    "id": 11,
+                    "name": " Department of Nursing & Midwifery ",
+                    "programs": [
+                        {
+                            "id": 62,
+                            "name": "Bachelor of Nursing Science ",
+                            "qualification_id": 4
+                        }
+                    ]
+                },
+                {
+                    "id": 12,
+                    "name": "College of Nursing & Midwifery ",
+                    "programs": [
+                        {
+                            "id": 63,
+                            "name": "Diploma in Nursing Science (Unmeb Curriculum)",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 64,
+                            "name": "Diploma in Nursing Science – Extension (Unmeb Curriculum) ",
+                            "qualification_id": 3
+                        },
+                        {
+                            "id": 65,
+                            "name": "Certificate in Nursing (UNMEB Curriculum) ",
+                            "qualification_id": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 13,
+                    "name": "College of Nursing & Midwifery ",
+                    "programs": [
+                        {
+                            "id": 66,
+                            "name": "Bachelor of Science in Food Technology and Human Nutrition",
+                            "qualification_id": 4
+                        },
+                        {
+                            "id": 67,
+                            "name": "Diploma in Food Science and Processing Technology",
+                            "qualification_id": 3
+                        }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}
