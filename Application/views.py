@@ -29,7 +29,7 @@ def home(request):
 
 def qualification(request, contact_id):
     
-    with open('/home/samtech/Desktop/My_Code/Bugema-Univ/programs.json', 'r') as f:
+    with open('/app/programs.json', 'r') as f:
         data = json.load(f)
 
         try:
@@ -92,7 +92,7 @@ def qualification(request, contact_id):
 
 
 def application(request, contact_id, program_id):
-    with open('/home/samtech/Desktop/My_Code/Bugema-Univ/programs.json', 'r') as f:
+    with open('/app/programs.json', 'r') as f:
         data = json.load(f)
         program = None
         try:
