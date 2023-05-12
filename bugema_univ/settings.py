@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'Administration',
     'django.contrib.humanize',
     'bootstrap4',
-    'crispy_bootstrap4',
+  
   
     
 ]
