@@ -1,16 +1,19 @@
 asgiref==3.6.0
-backports.zoneinfo==0.2.1;python_version<"3.9"
+backports.zoneinfo==0.2.1
 beautifulsoup4==4.12.0
 bootstrap4==0.1.0
 certifi==2022.12.7
 charset-normalizer==3.1.0
 crispy-bootstrap4==2022.1
 deprecation==2.1.0
+dj-database-url==2.0.0
 Django==4.1.7
 django-bootstrap4==22.3
 django-crispy-forms==2.0
+django-heroku==0.3.1
 django-intl-tel-input==0.3.1
 docx2python==2.6.0
+gunicorn==20.1.0
 idna==3.4
 lxml==4.9.2
 packaging==23.0
@@ -31,4 +34,4 @@ starkbank-ecdsa==2.2.0
 typing==3.7.4
 typing-extensions==4.5.0
 urllib3==1.26.15
-gunicorn==20.1.0
+whitenoise==6.4.0
