@@ -90,10 +90,10 @@ WSGI_APPLICATION = 'bugema_univ.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Bugema', 
-        'USER': 'samtech', 
-        'PASSWORD': 'sammies1999',
-        'HOST': '127.0.0.1', 
+        'NAME': 'd283bgvoo64j8h', 
+        'USER': 'hizxlkiydpayrr', 
+        'PASSWORD': 'c826279e2f71a95a29df929ff74a9877661658fb47e46be76ebc91e05d9ceedc',
+        'HOST': 'ec2-34-226-11-94.compute-1.amazonaws.com', 
         'PORT': '5432',
     }
 }
