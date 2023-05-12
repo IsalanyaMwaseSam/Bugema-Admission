@@ -9,7 +9,7 @@ from django.contrib import messages
 import json
 from python_flutterwave import payment
 
-flutterwave_api_secret = 'FLWSECK-690544b85bfd2162f139f7bf2f541946-X'
+flutterwave_api_secret = '###'
 payment.token = flutterwave_api_secret
 
 # Create your views here.
