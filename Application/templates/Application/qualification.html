@@ -1,68 +1,268 @@
-{% extends 'Application/base.html' %}
 {% load static %}
 {% load crispy_forms_tags %} 
 {% load humanize %}
-{% block content %}
-<div class="container-fluid mt-3" style="display: flex; justify-content: center; align-items: center;">
-  <div class="row">
-    <div class="col-lg-3 col-sm-6">
-      <div class="text" style="text-align: center; color: skyblue; margin-left: 360px;">
-        <h3>QUALIFICATIONS</h3>
-      </div>
-      <div class="card" style="width: 60rem; height: 29rem; background-clip: border-box; border: 1px solid rgba(34,41,47,.125); border-radius: 0.5rem;">
-        <div class="card-body" style="position: absolute;">
-          <div class="container">
-            <form method="get">
-              <select name="qualification_id" class="form-select">
-                <option value="">Select a qualification</option>
-                {% for qualification in qualifications %}
-                  <option value="{{ qualification.id }}">{{ qualification.name }}</option>
-                {% endfor %}
-              </select>
-              <input type="submit" value="Select">
-            </form>
-            <div class="card mt-3" style="height: 23rem; width: 55rem; overflow-y: scroll;">
-              <div class="card-body">
-                {% if programs|length > 0 %}
-                  <ul>
-                    {% for school in schools %}
-                      {% for department in school.departments %}
-                        {% if department.programs %}
-                          <li style="list-style: none; color: skyblue; font-size: 20px;">{{ school.name }}</li>
-                          <li style="list-style: none; color: darkblue; font-size: 15px; margin-bottom: 10px;">{{ department.name }}</li>
-                          {% for program in department.programs %}
-                            {% if program.qualification_id == selected_qualification_id %}
-                              <div class="card mb-3">
-                                <div class="card-body">
-                                  <div class="d-flex justify-content-between align-items-center">
-                                    <h5 class="card-title" style="color: black; font-size: 14px;">{{ program.name }}</h5>
-                        
-                                    <a href="{% url 'application' contact_id=contact.id program_id=program.id|stringformat:'d' %}" class="btn btn-primary">Apply</a>
-                                    {{ application_url }}
-                                  </div>
-                                  <p class="card-text" style="color: blue;">
-                                    Application Fee: <span style="color: green; display: inline-block;">50000 UGX</span>
-                                  </p>
-                                </div>
-                              </div>
-                            {% endif %}
-                          {% endfor %}
-                        {% endif %}
-                      {% endfor %}
-                    {% endfor %}
-                  </ul>
-                {% else %}
-                  <p>No programs available for the selected qualification.</p>
-                {% endif %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Bugema University Application</title>
+    <!-- Custom Stylesheet -->
+
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static 'images/bu.png' %}" type="image/x-icon">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body style="background: #E4E9F7;">
+  <style>
+    nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: white;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
   
+.logo {
+    height: 5px;
+}
+  
+.navbar-text {
+    text-align: center;
+    flex-grow: 1;
+    margin: 0px 500px;
+}
+  
+    @media screen and (max-width: 767px) {
+    nav{
+        width: 100%;
+        padding: 10px;
+
+    }
+    .navbar-toggle {
+        display: block;
+        cursor: pointer;
+    }
+    .navbar-text {
+        display: none;
+        margin: 0px 150px;
+    }
+    nav.active .navbar-text {
+        display: block;
+    }
+    .logo{
+        margin-top: 15px;
+        
+    }
+    .card{
+        width: 100%;
+        max-width: 650px;
+        margin-left: 200px;
+       
+    }
+}
+
+@media screen and (max-width: 670px) {
+    nav{
+        width: 100%;
+        padding: 10px;
+    }
+    .logo {
+        height: 30px;
+    }
+    .navbar-text h4 {
+        font-size: 18px;
+    }
+    
+    /* Small devices (landscape phones, 576px and up) */
+  @media (max-width: 576px) {
+    nav{
+    width: 100%;
+    padding: 10px;
+  }
+    .card-body {
+      position: static;
+    }
+  }
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (max-width: 768px) {
+    nav{
+    width: 100%;
+    padding: 10px;
+  }
+    .container {
+      max-width: 450px;
+      margin: 0 auto;
+    }
+    .card {
+      width: 100%;
+    }
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    nav{
+    width: 100%;
+    padding: 10px;
+  }
+    .container {
+      max-width: 650px;
+    }
+    .card {
+      max-width: 650px;
+    }
+  }
+
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (max-width: 1200px) {
+    nav{
+    width: 100%;
+    padding: 10px;
+   }
+    .container {
+      max-width: 1140px;
+    }
+    .card {
+      max-width: 650px;
+    }
+  }
+
+  /* Responsive typography */
+  @media (max-width: 767px) {
+  nav{
+    width: 100%;
+    padding: 10px;
+  }
+    h5.card-title {
+      font-size: 12px;
+    }
+    li {
+      font-size: 14px;
+    }
+  }
+  @media screen and (max-width: 575px) {
+  nav{
+    width: 100%;
+    padding: 10px;
+  }
+  .text h3{
+    margin-left: -300px;
+  }
+  .card .mt-3{
+    margin-left: -35px;
+  
+  }
+  .card .mt-3 .card-body{
+    margin-left: -35px;
+  
+  }
+  .card .mb-3{
+    margin-left: -15px;
+  }
+  .card .mb-3 .card-body{
+    margin-left: -15px;
+  }
+  .card{
+    max-width: 435px;
+    margin-left: 65px;
+  }
+}
+
+    
+}
+  </style>
+  <nav>
+      <div class="logo">
+        <img src="/static/images/bu.png" alt="Logo" style="width: 50px; height: 50px; margin-top: -20px;">
+      </div>
+  </nav>
+  {% if messages %}
+      {% for message in messages %}
+          <div class="alert alert-dismissible alert-success">
+          <button type="button" class="close" data-dismiss="alert">
+          ×
+          </button>
+          <strong>{{message}}</strong>
+          </div>
+      {% endfor %}
+  {% endif %}
+  <div class="container-fluid mt-3" style="display: flex; justify-content: center; align-items: center;">
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <div class="text" style="text-align: center; color: skyblue; margin-left: 360px;">
+          <h3>QUALIFICATIONS</h3>
+        </div>
+        <div class="card" style="width: 60rem; height: 29rem; background-clip: border-box; border: 1px solid rgba(34,41,47,.125); border-radius: 0.5rem;">
+          <div class="card-body" style="position: absolute;">
+            <div class="container">
+              <form method="get">
+                <select name="qualification_id" class="form-select">
+                  <option value="">Select a qualification</option>
+                  {% for qualification in qualifications %}
+                    <option value="{{ qualification.id }}">{{ qualification.name }}</option>
+                  {% endfor %}
+                </select>
+                <input type="submit" value="Select">
+              </form>
+              <div class="card mt-3" style="height: 23rem; width: 55rem; overflow-y: scroll;">
+                <div class="card-body">
+                  {% if programs|length > 0 %}
+                    <ul>
+                      {% for school in schools %}
+                        {% for department in school.departments %}
+                          {% if department.programs %}
+                            <li style="list-style: none; color: skyblue; font-size: 20px;">{{ school.name }}</li>
+                            <li style="list-style: none; color: darkblue; font-size: 15px; margin-bottom: 10px;">{{ department.name }}</li>
+                            {% for program in department.programs %}
+                              {% if program.qualification_id == selected_qualification_id %}
+                                <div class="card mb-3">
+                                  <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <h5 class="card-title" style="color: black; font-size: 14px;">{{ program.name }}</h5>
+                          
+                                      <a href="{% url 'application' contact_id=contact.id program_id=program.id|stringformat:'d' %}" class="btn btn-primary">Apply</a>
+                                      {{ application_url }}
+                                    </div>
+                                  </div>
+                                </div>
+                              {% endif %}
+                            {% endfor %}
+                          {% endif %}
+                        {% endfor %}
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    <p>No programs available for the selected qualification.</p>
+                  {% endif %}
+                  <p class="card-text" style="color: blue; margin-left: 30px;">
+                    Application Fee: <span style="color: green; display: inline-block;">50000 UGX</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </div>      
+          </div>      
+        </div>
       </div>
     </div>
   </div>
-</div>
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-{% endblock %}
+
+   <!--Qualifications-->
+   <script src="/static/js/qualifications.js"></script>
+</body>
 

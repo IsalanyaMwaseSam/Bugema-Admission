@@ -8,9 +8,9 @@ from .forms import *
 from django.contrib import messages
 import json
 from python_flutterwave import payment
+import Application.config as config
 
-flutterwave_api_secret = '###'
-payment.token = flutterwave_api_secret
+payment.token = config.flutterwave_api_secret
 
 # Create your views here.
 def home(request):
@@ -29,7 +29,7 @@ def home(request):
 
 def qualification(request, contact_id):
     
-    with open('/app/programs.json', 'r') as f:
+    with open('app/programs.json', 'r') as f:
         data = json.load(f)
 
         try:
@@ -92,7 +92,7 @@ def qualification(request, contact_id):
 
 
 def application(request, contact_id, program_id):
-    with open('/app/programs.json', 'r') as f:
+    with open('app/programs.json', 'r') as f:
         data = json.load(f)
         program = None
         try:
