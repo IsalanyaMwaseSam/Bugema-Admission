@@ -11,6 +11,13 @@ from docx.shared import Inches
 from io import BytesIO
 from django.conf import settings
 import os
+import configparser
+
+config = configparser.ConfigParser()
+config.read('config.py')
+
+api_key = config.get('sendgrid', 'api_key')
+
 
 # Create your views here.
 def dashboard(request):
@@ -121,7 +128,7 @@ def approve_application(request, application_id):
     message.attachment = attachedFile
 
     try:
-        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+        sg = SendGridAPIClient(api_key)
         response = sg.send(message)
         print(response.status_code)
         print(response.body)
