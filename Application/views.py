@@ -129,7 +129,6 @@ def application(request, contact_id, program_id):
                         Application.objects.create(
                             contact=contact, 
                             program=program, 
-                            program_id = program_id,
                             document=document,
                             name=contact.name,
                             email=contact.email,
