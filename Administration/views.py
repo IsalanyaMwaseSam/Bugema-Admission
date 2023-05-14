@@ -13,10 +13,8 @@ from django.conf import settings
 import os
 import configparser
 
-config = configparser.ConfigParser()
-config.read('config.py')
 
-api_key = config.get('sendgrid', 'api_key')
+api_key = os.environ.get('api_key')
 
 
 # Create your views here.

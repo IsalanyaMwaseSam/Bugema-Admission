@@ -8,9 +8,9 @@ from .forms import *
 from django.contrib import messages
 import json
 from python_flutterwave import payment
-import Application.config as config
+import os
 
-payment.token = config.flutterwave_api_secret
+payment.token = os.environ.get('flutterwave_api_secret')
 
 # Create your views here.
 def home(request):
